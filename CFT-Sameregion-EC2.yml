@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Select the keypair
+
+  SubnetId:  
+    Description: 'Choose the default SubnetId'
+    Type: AWS::EC2::Subnet::Id  
+
+Resources:
+  MyInstance11:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-00952f27cf14db9cd"
+      InstanceType: "t2.micro"
+      KeyName: !Ref KeyName
+
+  MyInstance22:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-03f4878755434977f"
+      InstanceType: "t2.micro"
+      KeyName: !Ref KeyName

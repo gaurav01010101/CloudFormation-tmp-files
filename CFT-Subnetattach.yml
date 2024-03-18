@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Create a new Instance'
+
+Parameters:
+  KeyName: 
+    Description: 'Create a new Instance'
+    Type: AWS::EC2::KeyPair::KeyName
+
+  SubnetId:  
+    Description: 'Choose the default SubnetId'
+    Type: AWS::EC2::Subnet::Id
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: "t2.micro"
+      ImageId: "ami-00952f27cf14db9cd"
+      KeyName: !Ref KeyName
+      SubnetId: !Ref SubnetId

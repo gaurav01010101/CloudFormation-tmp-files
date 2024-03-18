@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Volume Creation'
+
+Resources:
+  MyEBSVolume:
+    Type: AWS::EC2::Volume
+    Properties:
+      AvailabilityZone: 'ap-south-1a'
+      Size: '10'
